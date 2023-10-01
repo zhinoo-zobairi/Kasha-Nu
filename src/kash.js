@@ -21,6 +21,7 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 function displayTemp(response) {
+  console.log(response.data);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let windElement = document.querySelector("#wind");
@@ -33,8 +34,13 @@ function displayTemp(response) {
   tempElement.innerHTML = Math.round(response.data.main.temp);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
-let city = "Diyarbakır";
+let city = "Berlin";
 let apiKey = "a0a183380df8741e35218ccc59e2fe87";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemp);
