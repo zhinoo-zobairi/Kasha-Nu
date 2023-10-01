@@ -38,6 +38,7 @@ a {
   position: relative;
   top: -20px;
 }
-#windUnit {
+#windUnit,
+#preposition {
   text-transform: lowercase;
 }
