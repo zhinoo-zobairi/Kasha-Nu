@@ -1,3 +1,21 @@
+const cityMapping = {
+  Sanandij: "Sna",
+  Kermanshah: "Kermashan",
+  Diyarbakir: "Amed",
+  Şanlıurfa: "Riha",
+  Javānrūd: "Jwanrro",
+  Dehgolan: "Dewlan",
+  Paveh: "Pawa",
+  Marivan: "Mariwan",
+  Erbil: "Hewler(Erbil)",
+  "Eslamabad-e-Gharb": "Shabad",
+  Qorveh: "Qurwa",
+};
+const apiCityMapping = {
+  Sanandij: "Sanandaj",
+  Javānrūd: "Javanrud",
+  Diyarbakır: "Diyarbakir",
+};
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -21,6 +39,7 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 function displayTemp(response) {
+  console.log(response.data.name);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let windElement = document.querySelector("#wind");
@@ -33,7 +52,17 @@ function displayTemp(response) {
   celsiusTemperatur = response.data.main.temp;
   tempElement.innerHTML = Math.round(celsiusTemperatur);
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
+  let originalCityName = response.data.name;
+  let lowercaseCityName = originalCityName.toLowerCase();
+  if (apiCityMapping[lowercaseCityName]) {
+    originalCityName = apiCityMapping[lowercaseCityName];
+  }
+  if (cityMapping[originalCityName]) {
+    cityElement.innerHTML = cityMapping[originalCityName];
+  } else {
+    cityElement.innerHTML = originalCityName;
+  }
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
