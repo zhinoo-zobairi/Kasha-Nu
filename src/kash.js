@@ -6,7 +6,7 @@ function formatDate(timestamp) {
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    hours = `0${minutes}`;
+    minutes = `0${minutes}`;
   }
   let days = [
     "Sunday",
@@ -21,7 +21,6 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 function displayTemp(response) {
-  console.log(response.data);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let windElement = document.querySelector("#wind");
@@ -31,7 +30,8 @@ function displayTemp(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperatur = response.data.main.temp;
+  tempElement.innerHTML = Math.round(celsiusTemperatur);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let iconElement = document.querySelector("#icon");
@@ -50,7 +50,24 @@ function handleSubmit(event) {
   event.preventDefault();
   search(cityInputElement.value);
 }
+let celsiusTemperatur = null;
 
+function fahToCel(event) {
+  event.preventDefault();
+  let fahrenheitTemp = Math.round((celsiusTemperatur * 9) / 5 + 32);
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = fahrenheitTemp;
+}
+function celToFah(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemperatur);
+}
+
+let celsiusElement = document.querySelector("#celsius");
+celsiusElement.addEventListener("click", celToFah);
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSubmit);
 let cityInputElement = document.querySelector("#city-input");
+let fahrenheitElement = document.querySelector("#fahrenheit");
+fahrenheitElement.addEventListener("click", fahToCel);
