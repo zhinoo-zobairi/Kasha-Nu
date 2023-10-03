@@ -19,8 +19,8 @@ a {
   max-width: 680px;
 }
 .kash-app {
-  margin-top: 30px;
-  padding: 20px;
+  margin-top: 70px;
+  padding: 50px;
   border: 1px solid #dadde1;
   border-radius: 10px;
   color: rgb(112, 117, 122);
@@ -41,4 +41,41 @@ a {
 #windUnit,
 #preposition {
   text-transform: lowercase;
+}
+.header {
+  font-size: 30px;
+  position: absolute;
+  top: 90px;
+  left: 400px;
+  padding: -20px;
+  font-family: "Permanent Marker", cursive;
+}
+.logo-icon {
+  position: absolute;
+  top: 88px; /* Adjust the top value to position it correctly */
+  left: 1000px; /* Adjust the left value to position it correctly */
+  font-size: 30px;
+}
+.hu-wi {
+  font-size: 15px;
+  position: absolute;
+  top: 200px; /* Adjust the top value to position it correctly */
+  left: 870px;
+}
+#weather-forcast {
+  margin-top: 60px;
+  text-align: center;
+  margin: 0; /* Reset margin to zero */
+  padding: 0; /* Reset padding to zero */
+}
+
+.weather-forecast-date,
+.weather-forecast-temp {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#forecast-logo {
+  display: block;
+  margin: 0 auto;
 }

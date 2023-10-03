@@ -10,6 +10,15 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Coming+Soon&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2a15033da7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -17,6 +26,7 @@
     <div class="cotainer">
       <div class="kash-app-wrapper">
         <div class="kash-app">
+          <div class="header">Kash</div><span class="logo-two logo-icon"><i class="fa-solid fa-mountain-sun"></i></i></span>
           <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-9">
@@ -54,15 +64,31 @@
                 <a id="fahrenheit" href="...">°F</a></span
               >
             </div>
-            <div class="col-6">
+            <div class="hu-wi">
               <div class="flexbox">
                 <ul>
-                  <li id="humidity"></li>
+                  <li id="humidity">hu</li>
                   <li>
-                    Wind: <span id="wind"> </span>
+                    Wind: <span id="wind"></span>
                     <span id="windUnit">km/h</span>
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div class="weather-forecast" id="forecast">
+              <div class="row">
+                <div class="col-2">
+                  <div class="weather-forecast-date">Thu</div>
+                   <img id="forecast-logo"
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="cloudy"
+                class="flexbox"
+                width="42" />
+              <div class="weather-forecast-temp">
+    
+            <span class="weather-forecast-temp-max">18°</span> <span class="weather-forecast-temp-min">12°</span></div>
+            </div>
+                
               </div>
             </div>
           </div>
