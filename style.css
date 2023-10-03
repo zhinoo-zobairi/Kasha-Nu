@@ -14,6 +14,9 @@ img {
 a {
   text-decoration: none;
 }
+small {
+  text-align: center;
+}
 .kash-app-wrapper {
   margin: 0 auto;
   max-width: 680px;

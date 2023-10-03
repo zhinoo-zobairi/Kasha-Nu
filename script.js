@@ -38,8 +38,15 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
+function getForecast(coordinates) {
+  let apiKey = "197ef3a642b76eef90e131866f74a0a0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
+}
+
 function displayTemp(response) {
-  console.log(response.data.name);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let windElement = document.querySelector("#wind");
@@ -68,13 +75,37 @@ function displayTemp(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (days) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                  <div class="weather-forecast-date">${days}</div>
+                   <img id="forecast-logo"
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="cloudy"
+                class="flexbox"
+                width="42" />
+              <div class="weather-forecast-temp">
+    
+            <span class="weather-forecast-temp-max">18°</span> <span class="weather-forecast-temp-min">12°</span></div>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 function search(city) {
   let apiKey = "a0a183380df8741e35218ccc59e2fe87";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputElement.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemp);
 }
-
+displayForecast();
 function handleSubmit(event) {
   event.preventDefault();
   search(cityInputElement.value);
