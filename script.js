@@ -142,9 +142,8 @@ function celToFah(event) {
 }
 
 let celsiusElement = document.querySelector("#celsius");
-celsiusElement.addEventListener("click", celToFah);
+
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSubmit);
 let cityInputElement = document.querySelector("#city-input");
 let fahrenheitElement = document.querySelector("#fahrenheit");
-fahrenheitElement.addEventListener("click", fahToCel);
