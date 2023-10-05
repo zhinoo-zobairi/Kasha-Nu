@@ -79,6 +79,7 @@ function displayTemp(response) {
 }
 
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -105,7 +106,7 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputElement.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemp);
 }
-displayForecast();
+
 function handleSubmit(event) {
   event.preventDefault();
   search(cityInputElement.value);
