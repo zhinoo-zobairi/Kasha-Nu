@@ -1,7 +1,7 @@
 const cityMapping = {
   Sanandij: "Sna",
   Kermanshah: "Kermashan",
-  Diyarbakir: "Amed",
+  Diyarbakır: "Amed",
   Şanlıurfa: "Riha",
   Javānrūd: "Jwanrro",
   Dehgolan: "Dewlan",
@@ -49,21 +49,19 @@ function getForecast(coordinates) {
   let apiKey = "197ef3a642b76eef90e131866f74a0a0";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
-  console.log(apiUrl);
 }
 
 function displayTemp(response) {
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = Math.round(response.data.wind.speed);
+  windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}km/h`;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let tempElement = document.querySelector("#temp");
-  celsiusTemperatur = response.data.main.temp;
-  tempElement.innerHTML = Math.round(celsiusTemperatur);
+  tempElement.innerHTML = `${Math.round(response.data.main.temp)}°C`;
   let cityElement = document.querySelector("#city");
   let originalCityName = response.data.name;
   let lowercaseCityName = originalCityName.toLowerCase();
@@ -119,7 +117,7 @@ function displayForecast(response) {
 }
 function search(city) {
   let apiKey = "a0a183380df8741e35218ccc59e2fe87";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputElement.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemp);
 }
 
@@ -147,3 +145,4 @@ let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSubmit);
 let cityInputElement = document.querySelector("#city-input");
 let fahrenheitElement = document.querySelector("#fahrenheit");
+search("Kermanshah");
