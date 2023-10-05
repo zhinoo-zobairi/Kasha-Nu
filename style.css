@@ -45,25 +45,17 @@ small {
 #preposition {
   text-transform: lowercase;
 }
-.header {
-  font-size: 30px;
-  position: absolute;
-  top: 90px;
-  left: 400px;
-  padding: -20px;
+#header {
+  font-size: 40px;
   font-family: "Permanent Marker", cursive;
+  padding-bottom: 20px;
 }
-.logo-icon {
-  position: absolute;
-  top: 88px; /* Adjust the top value to position it correctly */
-  left: 1000px; /* Adjust the left value to position it correctly */
-  font-size: 30px;
+#logo-two-logo-icon {
+  font-size: 40px;
+  padding-bottom: 20px;
 }
 .hu-wi {
   font-size: 15px;
-  position: absolute;
-  top: 200px; /* Adjust the top value to position it correctly */
-  left: 870px;
 }
 #weather-forcast {
   margin-top: 60px;

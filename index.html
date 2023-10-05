@@ -25,8 +25,8 @@
   <body>
     <div class="cotainer">
       <div class="kash-app-wrapper">
-        <div class="kash-app">
-          <div class="header">Kash</div><span class="logo-two logo-icon"><i class="fa-solid fa-mountain-sun"></i></i></span>
+        <div class="kash-app"><div class="row">
+          <div class="col-9" id="header">Kash</div><div class="col-3" id="logo-two-logo-icon"><i class="fa-solid fa-mountain-sun"></i></i></div></div>
           <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-9">
@@ -42,7 +42,7 @@
               </div>
             </div>
           </form>
-          <h1 id="city"></h1>
+          <h1 id="city">Şar</h1>
           <ul>
             <li>
               Last Updated <span id="preposition">at</span>
@@ -51,7 +51,7 @@
             <li id="description"></li>
           </ul>
           <div class="row">
-            <div class="col-6">
+            <div class="col-8">
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                 alt="cloudy"
@@ -64,6 +64,7 @@
                 <a id="fahrenheit" href="...">°F</a></span
               >
             </div>
+            <div class="col-4">
             <div class="hu-wi">
               <div class="flexbox">
                 <ul>
@@ -72,7 +73,7 @@
                     Wind: <span id="wind"></span>
                     <span id="windUnit">km/h</span>
                   </li>
-                </ul>
+                </ul></div>
               </div>
             </div>
             <div class="weather-forecast" id="forecast">
