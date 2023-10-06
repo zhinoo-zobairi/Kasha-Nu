@@ -84,6 +84,31 @@ function displayTemp(response) {
   );
   getForecast(response.data.coord);
 }
+function showLocTemp(response) {
+  let windSpeed = document.querySelector("#wind");
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `Humidity: ${Math.round(response.data.main.humidity)}%`;
+  windSpeed.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
+  let realTemp = document.querySelector("#germi");
+  let description = document.querySelector("#description");
+  description.innerHTML = `${response.data.weather[0].description}`;
+  realTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  cityElement = document.querySelector("#city");
+  cityElement.innerHTML = `${response.data.name}'s`;
+}
+function showPos(position) {
+  let apiKey = "a0a183380df8741e35218ccc59e2fe87";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showLocTemp);
+}
+
+function currentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPos);
+}
+
+let locationButton = document.querySelector("#current-location");
+locationButton.addEventListener("click", currentLocation);
 
 function displayForecast(response) {
   let dailyForecast = response.data.daily;
