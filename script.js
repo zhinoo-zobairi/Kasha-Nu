@@ -2,7 +2,7 @@ const cityMapping = {
   Sanandij: "Sna",
   Kermanshah: "Kermashan",
   Diyarbakır: "Amed",
-  Şanlıurfa: "Riha",
+  "Şanlıurfa Province" : "Riha",
   Javānrūd: "Jwanrro",
   Dehgolan: "Dewlan",
   Paveh: "Pawa",
