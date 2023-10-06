@@ -17,6 +17,7 @@ const apiCityMapping = {
   Sanandij: "Sanandaj",
   Javānrūd: "Javanrud",
   Diyarbakır: "Diyarbakir",
+  "Şanlıurfa Province": "Şanlıurfa",
 };
 function formatDate(timestamp) {
   let date = new Date(timestamp);
