@@ -10,6 +10,8 @@ const cityMapping = {
   Erbil: "Hewler(Erbil)",
   "Eslamabad-e-Gharb": "Shabad",
   Qorveh: "Qurwa",
+  Adıyaman: "Semsur", 
+  Adıyaman: "Semsur",
 };
 const apiCityMapping = {
   Sanandij: "Sanandaj",
