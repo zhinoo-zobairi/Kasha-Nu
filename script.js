@@ -2,7 +2,7 @@ const cityMapping = {
   Sanandij: "Sna",
   Kermanshah: "Kermashan",
   Diyarbakır: "Amed",
-  "Şanlıurfa Province" : "Riha",
+  "Şanlıurfa Province": "Riha",
   Javānrūd: "Jwanrro",
   Dehgolan: "Dewlan",
   Paveh: "Pawa",
@@ -10,7 +10,7 @@ const cityMapping = {
   Erbil: "Hewler(Erbil)",
   "Eslamabad-e-Gharb": "Shabad",
   Qorveh: "Qurwa",
-  Adıyaman: "Semsur", 
+  Adıyaman: "Semsur",
   Adıyaman: "Semsur",
 };
 const apiCityMapping = {
@@ -99,7 +99,7 @@ function showLocTemp(response) {
 function showPos(position) {
   let apiKey = "a0a183380df8741e35218ccc59e2fe87";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showLocTemp);
+  axios.get(apiUrl).then(displayTemp);
 }
 
 function currentLocation(event) {
