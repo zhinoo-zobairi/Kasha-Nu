@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Keş û hewa</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,75 +18,78 @@
       src="https://kit.fontawesome.com/2a15033da7.js"
       crossorigin="anonymous"
     ></script>
-    <style>
-      body {
-        background-color: rgb(202, 228, 244);
-      }
-      :root {
-        --link-decoration: none;
-      }
-      a {
-        text-decoration: var(--link-decoration);
-      }
-      a:hover {
-        text-decoration: underline;
-        cursor: pointer;
-        color: #ff0000;
-      }
-
-      .container {
-        border: 1px solid white;
-        border-radius: 10px;
-        background-color: white;
-
-        display: block;
-
-        margin-top: 220px;
-      }
-      h1 {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 25px;
-      }
-      .cities {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-        padding: 10px 0;
-      }
-
-      .city {
-        margin-top: 180px;
-      }
-
-      small {
-        text-align: center;
-      }
-      .wrapper {
-        margin: 0 auto;
-        width: 50%;
-      }
-    </style>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="container">
-        <h1>
-          Online portal dedicated to time and
-          <a href="index.html">weather</a> updates for <u>Kurdistan</u>
-        </h1>
-        <div class="cities">
-          <span class="city rojhelat">Kermashan</span>
-          <span class="city rojava">Kobanê</span>
-          <span class="city bashur">Hewlêr(Erbil)</span>
-          <span class="city bakur">Amed</span>
+     <button id="homepage-button" type="button" class="btn btn-secondary">
+      <a href="index.html" class="homepage">Back to TIME</a>
+    </button>
+    <div class="cotainer">
+      <div class="kash-app-wrapper">
+        <div class="kash-app"><div class="row">
+          <div class="col-9" id="header">Kash</div><div class="col-3" id="logo-two-logo-icon"><i class="fa-solid fa-mountain-sun"></i></i></div></div>
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-8">
+                <input
+                  type="search"
+                  placeholder="Enter a city"
+                  class="form-control"
+                  id="city-input"
+                />
+              </div>
+              <div class="col-2">
+                <input type="submit" value="search" class="btn btn-secondary" />
+<div class="col-2">
+                <input type="submit" value="current location" class="btn btn-secondary" id="current-location" />
+              </div>
+            </div>
+          </form>
+          <h1 id="city"></h1>
+          <ul>
+            <li>
+              Last Updated <span id="preposition">at</span>
+              <span id="date"></span>
+            </li>
+            <li id="description"></li>
+          </ul>
+          <div class="row">
+            <div class="col-8">
+              <img
+                class="flexbox"
+                id="icon"
+              />
+              <span id="temp"></span>
+              <span class="unit"></span
+              >
+            </div>
+            <div class="col-4">
+            <div class="hu-wi">
+              <div class="flexbox">
+                <ul>
+                  <li id="humidity"></li>
+                  <li>
+                     <span id="wind"></span>
+                    <span id="windUnit"></span>
+                  </li>
+                </ul></div>
+              </div>
+            </div>
+            <div class="weather-forecast" id="forecast">
+              
+              </div>
+            </div>
+          </div>
         </div>
+        <small>
+          This is an
+          <a class="source" href="https://github.com/zhinoo-zobairi/Kasha-Nu">open-source</a>
+          code by Jinno
+        </small>
       </div>
-      <small
-        >Contact Me via
-        <a href="mailto:zobairi1198@gmail.com">zobairi1198@gmail.com</a></small
-      >
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
