@@ -77,3 +77,16 @@ small {
 #current-location {
   margin-top: 10px;
 }
+#homepage-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 5px 40px 5px 40px;
+}
+.homepage {
+  color: white;
+}
+.source {
+  /* Styles for other links can be added here */
+}
