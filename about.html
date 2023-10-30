@@ -21,18 +21,43 @@
         text-decoration: none;
       }
       a:visited {
-        color: aliceblue;
+        color: blue;
+      }
+      .container {
+        text-align: center;
+      }
+      #home-button {
+        margin-top: 15px;
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 50%;
+          margin-top: 5%;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>About me</h1>
-    <h2>
-      Learn more about me on my
-      <a href="https://www.linkedin.com/in/zhinoo-zobairi">Linkedin</a>
-    </h2>
-    <button id="okr-button" type="button" class="btn btn-secondary">
-      <a href="index.html">Back to Homepage</a>
-    </button>
+    <div
+      class="container p-4 bg-info bg-opacity-10 border border-info border-start rounded mx-auto p-2"
+    >
+      <h1>About me</h1>
+      <div class="fs-3">
+        I'm Jinno, embarking on my web development journey with enthusiasm, and
+        I'm excited to announce my very first real project, 'time.krd.' This
+        project is dedicated to showcasing various time zones within Kurdistan,
+        and it even includes a linked weather page. It's essential to stay
+        connected with friends and family in different regions of Kurdistan,
+        making 'time.krd' all the more significant.
+      </div>
+    </br>
+      <p class="fs-">
+        Learn more about me on my
+        <a href="https://www.linkedin.com/in/zhinoo-zobairi" title="Linkedin Link">Linkedin</a>
+      </p>
+      <button id="home-button" type="button" class="btn btn-secondary">
+        <a href="index.html" title="Homepage Link">Back to Homepage</a>
+      </button>
+    </div>
   </body>
 </html>
